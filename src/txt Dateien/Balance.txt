@@ -1,0 +1,172 @@
+DOk hier mal das erste Level, damit ihr was zum Anfangen habt.
+Ich dachte an an 20HP und 5 Schaden für den Charakter zu Beginn
+
+Dann wäre z.B. folgendes Szenario für die Monster möglich:
+
+15 Monster der kategorie 1 mit 5HP und 1 Schaden
+4 Monster der kategorie 2 mit 8HP und 2 Schaden
+1 Monster Kategorie 3 mit 10HP und 3 Schaden
+
+Dann müsste eine Hit-Point-Regeneration von etwa 10 in der gesamt-Zeit des levels nötig 
+sein. 
+Das Kloster kann dann helfen, noch den Troll auszuschalten. Soll der in jedem Level gleich 
+stark sein?
+
+Der Schaden ist dabei der Durschnittswert. Es wird wahrscheinlich spannender, wenn der 
+Schaden jeweisl variiert. Das heißt 1-3 Schaden anstatt 2 usw.
+ 
+Für die folgenden Level würde ich jetzt die zu dem Zeitpunkt maximalen Werte des 
+Charakters angeben und es von level zu level ein klein wenig einfacher machen, damit man 
+diese nicht vollständig erreicht haben muss.
+Gut wäre es, wenn die Hp zu beginn jedes Levels wieder auf Maximum gesetzt werden 
+(ansonsten könnte man ja auch einfach warten bis man regeneriert wird bis man in den neuen 
+Raum geht, was witzlos ist)
+
+Level 2
+
+maximale HP des Charakters 30, maximaler Schaden: 8
+
+5 Monster Kategorie 1        
+4 Monster Kategorie 2    (6 mit Tränken)
+2 Monster kategorie 3    (5 mit Tränken)
+2 Monster kategorie 4 a 16HP und 4 Schaden
+
+-----> durchschnittlicher gesamtschaden der Monster: 41 D.h. wieder müssen etwa 10HP 
+regeneriert werden.
+Für den Fall, dass man noch Tränke findet, die insgesamt 20 HP regenerieren können, erhöht 
+sich die Anzahl der Monster entsprechend. 
+
+Level 3
+
+maximale HP des Charaters 50, Schaden 11, Tränke über 30 HP
+
+7 Monster Kat 2
+7 Monster Kat 3
+5 Monster Kat 4
+2 Monster Kat 5 mit 21HP und 6 Schaden
+
+Die Sache wird dadurch jeweils noch erschwert, dass auch mehrere Monster gleichzeitig 
+gegen eine kämpfen können. D.h. bei den bisherigen zahlen ist wohl auch einiges weglaufen 
+notwendig aber das halte ich für sinnvoll.
+
+Level 4
+
+maximale Hp des Charakters 80, Schaden 16, Tränke über 50 HP
+
+7 Monster Kat 3
+6 Monster Kat 4
+6 Monster Kat 5
+2 Monster Kat 6 mit 25HP und 8 Schaden
+
+Level 5
+
+maxiale HP Charakter 100, Schaden 20, TRänke über 100
+
+8 Monster Kat 4
+7 Monster Kat 5
+6 Monster Kat 6
+5 Monster Kat 7 mit 30 HP, 10 Schaden
+
+Drachenlevel
+
+Der Drache sollte am besten genauso stark sein wie der Charakter. Dann kann man die Sache 
+durch weglaufen immer noch rum-reißen.
+Das wäre dann entsprechend HP 130 Schaden 25. Tränke sollten dann für das Drachenlevel 
+entfallen
+
+
+Ich denke wir machen jetzt alles über Items und nicht über Erfahrung. sehe ich das richtig?
+Entsprechend würde ich jetzt sinnvolle Wahrscheinlichkeiten für das dropen von 
+Gegenständen entwerfen. Tränke liegen am besten auf der karte verteilt....
+
+Würdet ihr es hinbekommen, dass die Haltbarkeit der waffen bei jedem Schlag um 1 
+verringert wird. Das scheint mir die sinnvollste methode dafür zu sein.
+
+Waffen
+schaden ist immer von 1 bis max
+spielerschaden 1-5
+waffenschadschaden 
+Axt: Schaden +2 Haltbarkeit 30 Dropwahrscheinlichkeit 1/3 bei Monster Kat 2
+
+Kurzschwert: Schaden 2-5 Haltbarkeit: 15 Dropwahrscheinlichkeit 1/5 Monster Kat 3
+
+Langschwert: Schaden 5-7 Haltbarkeit 10 Dropwahrscheinlichkeit 1/20 Monster Kat 3; 1/4 
+Monster Kat 4
+
+Riesenschwert: Schaden 10-14 Haltbarkeit 8 Dropwahrscheinlichkeit 1/5 Monster Kat 4; 1/4 
+Monster Kat 5
+
+Großschwert: Schaden 12 Haltbarkeit 25 Dropwahrscheinlichkeit  1/6 Monster kat 5; 1/3 
+Monster Kat 6
+
+Akragons Relikt: Schaden 13-17 Haltbarkeit 10 Dropwahrscheinlichkeit  1/10 Monster Kat 5; 
+1/5 Monster Kat 6
+
+Dumbarons Kolossschwert: Schaden 16 Haltbarkeit 10 Dropwahrscheinlichkeit 1/12 Monster 
+Kat 5; 1/5 Monster Kat 6
+
+Kunkrans Drachtentöter: Schaden 25 Haltbarkeit 4 Dropwahrscheinlichkeit Monster Kat 6 
+1/15; Monster Kat 7 1/5
+
+Will sich jemand zu den ausgedachten Namen noch Geschichten überlegen?
+
+
+Rüstungen
+
+So wie ich das bisher sehe fallen jetzt schon zeimlich viele Gegenstände...
+Vll. wäre es für die Rüstungen das beste, wenn diese auf der karte zu finden wären genauso 
+wie die Tränke. Ansonsten könnte es schon zu unübersichtlich werden. Oder aber ihr 
+bekommt es hin, dass jede Rüstung nur einmal fällt. Es wäre auch eine Möglichkiet, dass die 
+schwachen Waffen ab einem bestimmten Level nicht mehr vorkommen. Hier noch die namen 
+der Rüstungungen mit den entsprechenden Werten. haltbarkeit ist hier wohl auch nicht 
+sinnvoll, da dann die maximale HP-Zahl hin und her springen würde.
+
+Leichte Rüstung: HP +10
+
+Lederrüstung: HP +30
+
+Kettenpanzer: HP +50
+
+Eisenrüstung: HP +80
+
+Heilige Rüstung. HP +110
+
+Paul, könntest du noch deine eine Karte auf 80x30 übertragen? Dann würde ich die anderen 
+bis spätestens morgen Mittag überarbeiten und noch eine zusätzliche entwerfen und das thema 
+wäre abgehakt.....
+
+Das wärs jetzt fürs erste mal von meiner seite....
+hier mal die waffen sortiert nach den monster (aus denen die dropen) und mit angepasster 
+stärker (gleiche balance wie oben)
+Kat 2:
+1/3       Axt:                                        Schaden 1 Haltbarkeit 30  
+ 
+Kat 3:
+1/5       Kurzschwert:                          Schaden 2 Haltbarkeit: 15
+1/20     Langschwert:                          Schaden 7 Haltbarkeit 10
+ 
+Kat 4:
+1/4       Langschwert:                          Schaden 7 Haltbarkeit 10
+1/5       Riesenschwert:                       Schaden 19 Haltbarkeit 8
+ 
+Kat 5:
+1/4       Riesenschwert:                       Schaden 19 Haltbarkeit 8
+1/6       Großschwert:                          Schaden 19 Haltbarkeit 25
+1/10     Akragons Relikt:                      Schaden 25 Haltbarkeit 10
+1/12     Dumbarons Kolossschwert:      Schaden 27 Haltbarkeit 10
+ 
+Kat 6:
+1/3       Großschwert:                          Schaden 19 Haltbarkeit 25
+1/5       Akragons Relikt:                     Schaden 25 Haltbarkeit 10
+1/5       Dumbarons Kolossschwert:     Schaden 27 Haltbarkeit 10
+1/15     Kunkrans Drachtentöter:          Schaden 45 Haltbarkeit 4
+ 
+Kat 7:
+1/5       Kunkrans Drachtentöter:       Schaden 45 Haltbarkeit 4
+
+
+
+
+
+
+
