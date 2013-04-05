@@ -11,6 +11,8 @@ package rogue.level;
 import jade.core.World;
 import jade.ui.TiledTermPanel;
 import jade.util.datatype.ColoredChar;
+
+import java.awt.Color;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;

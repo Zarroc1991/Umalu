@@ -13,7 +13,6 @@ public class ColoredChar
 {
     private final char ch;
     private final Color color;
-
     private static Map<ColoredChar, ColoredChar> interned = new HashMap<ColoredChar, ColoredChar>();
 
     /**
@@ -38,9 +37,20 @@ public class ColoredChar
      * @param ch the {@code char} value of the {@code ColoredChar}
      * @return the interned {@code ColoredChar} with the specified values
      */
-    public static ColoredChar create(char ch)
-    {
+    public static ColoredChar create(char ch){
+    	
         return create(ch, Color.white);
+    }
+    
+    public static ColoredChar create(char ch,int n){
+    	switch(n){
+    		case 0: return create(ch, Color.white);
+    		case 1: return create(ch, Color.green);
+    		case 2: return create(ch, Color.yellow);
+    		case 3: return create(ch, Color.red);
+    		default:return create(ch, Color.white);
+    	}
+    		
     }
 
     private ColoredChar(char ch, Color color)
@@ -68,6 +78,7 @@ public class ColoredChar
     {
         return color;
     }
+
 
     @Override
     public boolean equals(Object obj)

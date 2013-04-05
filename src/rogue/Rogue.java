@@ -112,5 +112,6 @@ public class Rogue {
 		String d="Level: " + (level+1);
 		return(player.makeRightString(a,20)+player.makeRightString(b,20)+player.makeRightString(c,20)+player.makeRightString(d,20));
 	}
+	
 
 }
