@@ -1,6 +1,5 @@
 package rogue;
 
-
 import jade.core.World;
 import jade.ui.TiledTermPanel;
 import java.util.ArrayList;
