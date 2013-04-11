@@ -9,6 +9,7 @@ import jade.ui.Terminal;
 import jade.util.datatype.ColoredChar;
 import jade.util.datatype.Coordinate;
 import jade.util.datatype.Direction;
+import rogue.Rogue;
 import rogue.system.HelpScreen;
 import rogue.level.Screen;
 import rogue.creature.util.Inventory;
@@ -93,6 +94,9 @@ public class Player extends Creature implements Camera {
     public int getFull(){
         return full;
     }
+    
+
+    
 	@Override
 	/**
 	 * Ask Player to do some action (passing him the baton). Reads input and moves Character accordingly.
@@ -121,6 +125,11 @@ public class Player extends Creature implements Camera {
 			case 'o':
 				HelpScreen.printMainHelpScreen();
 				break;
+			case 'g':
+				Rogue.switchGodmode();
+				world().switchViewable();
+				break;
+				
 			case 'h':
 				Screen.showEventLog();
 				term.getKey();

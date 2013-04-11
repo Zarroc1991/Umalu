@@ -12,6 +12,8 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
+import rogue.Rogue;
 import rogue.creature.Player;
 import rogue.system.SystemHelper;
 
@@ -384,8 +386,23 @@ public abstract class World extends Messenger
 		Guard.argumentsInsideBounds(x, y, width, height);		//Macht etwas sichtbar 
 		grid[x][y].viewable = true ;
 	}
+	
+	public void switchViewable(){
+		int x=0;
+		int y=0;
+		while (x<=79){
+			while(y<=29){
+				grid[x][y].viewable = Rogue.getGodmode() ;
+				y++;
+			}
+			y=0;
+			x++;
+		}
+	}
+	
+	
 	public Boolean isviewable(int x, int y){
-		Guard.argumentsInsideBounds(x, y, width, height);		//ÔøΩberprÔøΩft, ob etwas sichtbar ist
+		Guard.argumentsInsideBounds(x, y, width, height);		//‹berpr¸ft, ob etwas sichtbar ist
 		return grid[x][y].viewable ;
 	}
 	/**
@@ -610,14 +627,11 @@ public abstract class World extends Messenger
 
 		public Tile()			
 		{
+
 			passable = true;
 
-
-			if (SystemHelper.debug) {
-				viewable = true;
-			} else {
-				viewable = false;
-			}//false -> Sichtbarkeit einschr√§nken		//jedes Tile erh√§lt nocht die Eigenschaft der Sichtbarkeit 
+			viewable = false;
+			//jedes Tile erh‰lt nocht die Eigenschaft der Sichtbarkeit 
 
 
 			face = ColoredChar.create('.');

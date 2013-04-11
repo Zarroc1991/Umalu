@@ -14,7 +14,7 @@ import rogue.system.SystemHelper;
 public class Rogue {
 	int level ;
 	int levelanzahl;
-
+	private static boolean godmode=false;
 	ArrayList<Integer> levelorder;
 
 	
@@ -37,6 +37,8 @@ public class Rogue {
 		// erstellt zufällige Levelreihenfolge
 		ArrayList<Integer> levelorder = term.levelorder(levelanzahl);
 		levelorder.add(levelanzahl);
+		
+		
 		
 		// Generate a new World
 		World world = new Level(80, 33, player, levelorder.get(level), level,true,
@@ -111,6 +113,16 @@ public class Rogue {
 		String d="Level: " + (level+1);
 		return(player.makeRightString(a,20)+player.makeRightString(b,20)+player.makeRightString(c,20)+player.makeRightString(d,20));
 	}
-	
+    public static boolean getGodmode(){
+    	return godmode;
+    }
+    
+    public static void switchGodmode(){
+    	if (godmode){
+    		godmode=false;
+    	}else{
+    		godmode=true;
+    	}
+    }
 
 }
