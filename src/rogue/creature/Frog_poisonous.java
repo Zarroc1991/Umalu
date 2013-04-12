@@ -40,7 +40,7 @@ public class Frog_poisonous extends Monster {
 
     @Override
   public void act() {
-        
+    	world().setStepInt(x(), y());
         for (Direction dir : Arrays.asList(Direction.values())) {
             Player player = world().getActorAt(Player.class, x() + dir.dx(), y() + dir.dy());
 

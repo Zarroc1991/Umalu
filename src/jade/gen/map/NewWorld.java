@@ -56,16 +56,11 @@ public abstract class NewWorld extends MapGenerator {
 					char c = line.charAt(i);
 					c_color = ColoredChar.create(c);
 					switch (c) {
-					case '@': {
-						c_color = ColoredChar.create('#');
-						break;
-					}
-
+					case '@': {	c_color = ColoredChar.create('#');break;}
 					case ':': {	c_color = ColoredChar.create('.', Color.yellow);	break;}
 					case '~': {	c_color = ColoredChar.create('~', Color.blue);	break;}
 					case '^': {	c_color = ColoredChar.create('^', new Color(210,105,30));break;}
 					case '$': {	c_color = ColoredChar.create('$', Color.yellow);	break;}
-					case 'P': {	c_color = ColoredChar.create('P', Color.green);	break;}
 					case ',': {	c_color = ColoredChar.create(',', Color.green);	break;}
 					case ';': {	c_color = ColoredChar.create(';', new Color(69,139,0));	break;}
 					case '\u2020': {	c_color = ColoredChar.create('\u2020', new Color(199,21,133));break;}

@@ -7,6 +7,8 @@ import jade.util.Lambda;
 import jade.util.Lambda.FilterFunc;
 import jade.util.datatype.ColoredChar;
 import jade.util.datatype.Coordinate;
+
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
@@ -400,6 +402,45 @@ public abstract class World extends Messenger
 		}
 	}
 	
+	public void updateStepInt(){
+		int x=0;
+		int y=0;
+		while (x<=79){
+			while(y<=29){
+				if(grid[x][y].stepInt>0){
+					grid[x][y].stepInt--;
+				}
+				y++;
+			}
+			y=0;
+			x++;
+		}
+	}
+	
+	public void updateColor(){
+		int x=0;
+		int y=0;
+		while (x<=79){
+			while(y<=29){
+				int colorR=grid[x][y].face.color().getRed();
+				int colorG=grid[x][y].face.color().getGreen();
+				int colorB=grid[x][y].face.color().getBlue();
+				char c=grid[x][y].face.ch();
+				grid[x][y].face=ColoredChar.create(c,new Color(colorR,colorG,colorB,255-40*(grid[x][y].stepInt)));
+				
+				y++;
+			}
+			y=0;
+			x++;
+		}
+	}
+	
+	public void setStepInt(int x,int y){
+		char c=grid[x][y].face.ch();
+		if (c!='='&c!= '\u2020'&c!='\u00AC'&c!='\u00ae'&c!='\u00a9'){// Brücken und Kirche wird durch schritte nicht dunkler.
+		grid[x][y].stepInt=5;}
+	}
+	
 	
 	public Boolean isviewable(int x, int y){
 		Guard.argumentsInsideBounds(x, y, width, height);		//Überprüft, ob etwas sichtbar ist
@@ -453,7 +494,11 @@ public abstract class World extends Messenger
 	{
 		Guard.argumentIsNotNull(face);
 		Guard.argumentsInsideBounds(x, y, width, height);
-
+		/*
+		if (face.ch()=='#'){
+			face=ColoredChar.create('#', Color.red);
+		}
+		*/
 		grid[x][y].face = face;
 		grid[x][y].passable = passable;
 	}
@@ -469,6 +514,14 @@ public abstract class World extends Messenger
 		Guard.argumentIsNotNull(coord);
 
 		setTile(face, passable, coord.x(), coord.y());
+	}
+	
+	public void setColor(Color color,int x, int y){
+		Guard.argumentsInsideBounds(x, y, width, height);
+		Guard.argumentIsNotNull(color);
+		
+		char c=grid[x][y].face.ch();
+		grid[x][y].face=ColoredChar.create(c, color);
 	}
 
 	/**
@@ -624,13 +677,13 @@ public abstract class World extends Messenger
 		public boolean viewable; 
 		public ColoredChar face;
 		public Set<Actor> actors;
-
+		public int stepInt=0;
 		public Tile()			
 		{
 
 			passable = true;
 
-			viewable = false;
+			viewable = Rogue.getGodmode();
 			//jedes Tile erhält nocht die Eigenschaft der Sichtbarkeit 
 
 

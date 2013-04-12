@@ -30,7 +30,7 @@ public class Player extends Creature implements Camera {
 	private Terminal term;
 	private ViewField fov;
     private static double maxHitpointsWithoutArmor = 15;
-    private static final int strengthConstantWithoutArmor = 1;
+    private static int strengthConstantWithoutArmor = 1;
     private static final int strengthRandomWithoutArmor = 4;
     private int full;
 	private static double maxHitpoints;
@@ -105,7 +105,10 @@ public class Player extends Creature implements Camera {
 		try {
 			round++;
 			regainHitpoints();
-			if (full<=20){
+			world().updateStepInt();
+			world().setStepInt(x(), y());
+			world().updateColor();
+			if (full<=20 & !Rogue.getGodmode()){
 				reduceHitpoints();
 			}
 			//System.out.println();
@@ -128,8 +131,17 @@ public class Player extends Creature implements Camera {
 			case 'g':
 				Rogue.switchGodmode();
 				world().switchViewable();
+				if (Rogue.getGodmode()){
+					maxHitpointsWithoutArmor=1500;
+					strengthConstantWithoutArmor = 100;
+				}else{
+					maxHitpointsWithoutArmor=15;
+					strengthConstantWithoutArmor = 1;
+				}
+	            updateHP();
+                updateStrength();
 				break;
-				
+	
 			case 'h':
 				Screen.showEventLog();
 				term.getKey();
