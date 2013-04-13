@@ -316,6 +316,45 @@ public class Screen {
 		lastTerminal.refreshScreen();
 	}
 
+	public static void redrawMap(String hp, Color hpColor, String dmg, String full,Color fullColor, String lvl,String itemLine) {
+		redrawMap();
+		int a=0;
+		int b=0;
+		
+		while (a<hp.length()){
+			lastTerminal.bufferChar(a, (lastWorld.height()-1),
+			ColoredChar.create(hp.charAt(a),hpColor));
+			a++;
+		}
+		while (a<hp.length()+dmg.length()){
+			lastTerminal.bufferChar(a, (lastWorld.height()-1),
+			ColoredChar.create(dmg.charAt(b)));
+			a++;
+			b++;
+		}
+		b=0;
+		while (a<hp.length()+dmg.length()+full.length()){
+			lastTerminal.bufferChar(a, (lastWorld.height()-1),
+			ColoredChar.create(full.charAt(b),fullColor));
+			a++;
+			b++;
+		}
+		b=0;
+		while (a<hp.length()+dmg.length()+full.length()+lvl.length()){
+			lastTerminal.bufferChar(a, (lastWorld.height()-1),
+			ColoredChar.create(lvl.charAt(b)));
+			a++;
+			b++;
+		}
+		
+		for (int x = 0; x < itemLine.length(); x++) {
+			lastTerminal.bufferChar(x, (lastWorld.height()),
+					ColoredChar.create(itemLine.charAt(x)));
+		}
+		lastTerminal.refreshScreen();
+	}
+	
+	
 	/**
 	 * Puts Text in Eventline. redrawEventLine does not delete content on its own!
 	 *

@@ -2,6 +2,8 @@ package rogue;
 
 import jade.core.World;
 import jade.ui.TiledTermPanel;
+
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Calendar;
 import rogue.creature.Player;
@@ -89,7 +91,11 @@ public class Rogue {
 			// Generate a List of Monsters still on Map
 			Screen.lastWorld = world;
 			Screen.lastTerminal = term;
-			Screen.redrawMap(getStatusLine(player,level),player.getItemLine());
+			Screen.redrawMap(getHPLine(player),getHPColor(player),
+					getDamageLine(player),
+					getFullLine(player),getFullColor(player),
+					getLevelLine(player,level),
+					player.getItemLine());
 			
 			world.playertick();
 			term.registerCamera(player, player.x(), player.y() + 1);
@@ -106,12 +112,42 @@ public class Rogue {
 		System.exit(0);
 
 	}
-	public static String getStatusLine (Player player,int level){
+		
+	public static String getHPLine (Player player){
 		String a="HP: "+Math.round(player.getHitpoints()*10)/10.0+"/"+Math.round(player.getMaxHitpoints());
+		return(player.makeRightString(a,20));
+	}
+	public static Color getHPColor(Player player){
+		if (player.getHitpoints()<=player.getMaxHitpoints()*0.2){
+			return Color.red;
+		}else if(player.getHitpoints()<=player.getMaxHitpoints()*0.5){
+			return Color.yellow;
+		}else{
+			return Color.white;
+		}
+	}
+	public static String getDamageLine (Player player){
 		String b="Schaden: "+player.strength_constant +"-"+(player.strength_constant+player.strength_random);
+		return(player.makeRightString(b,20));
+	}
+	public static String getFullLine (Player player){
 		String c="Nahrung: "+player.getFull()+"/"+"100";
+		return(player.makeRightString(c,20));
+	}
+	
+	public static Color getFullColor(Player player){
+		if (player.getFull()<=20){
+			return Color.red;
+		}else if(player.getFull()<=70){
+			return Color.yellow;
+		}else{
+			return Color.white;
+		}
+	}
+	
+	public static String getLevelLine (Player player,int level){
 		String d="Level: " + (level+1);
-		return(player.makeRightString(a,20)+player.makeRightString(b,20)+player.makeRightString(c,20)+player.makeRightString(d,20));
+		return(player.makeRightString(d,20));
 	}
     public static boolean getGodmode(){
     	return godmode;
