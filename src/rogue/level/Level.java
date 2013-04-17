@@ -69,18 +69,18 @@ public class Level extends World {
 					addActors(Slug_fat.class, term, 4);
 					addActor(new Frog_poisonous(term));
 					addActor(new ItemGenerator(ColoredChar.create('R', Color.yellow), new Item("Leichte R\u00fcstung", 0, Item.ITEMTYPE_HEAD, 0,0, 10,1), term));
-					addActor(new ItemGenerator(ColoredChar.create('F', Color.orange), new Item("TestEssen",Item.ITEMTYPE_FOOD,11),term));
-					addActor(new ItemGenerator(ColoredChar.create('F', Color.orange), new Item("TestEssen",Item.ITEMTYPE_FOOD,11),term));
-					addActor(new ItemGenerator(ColoredChar.create('F', Color.orange), new Item("TestEssen",Item.ITEMTYPE_FOOD,11),term));
-					addActor(new ItemGenerator(ColoredChar.create('F', Color.orange), new Item("TestEssen",Item.ITEMTYPE_FOOD,11),term));
-					addActor(new ItemGenerator(ColoredChar.create('F', Color.orange), new Item("TestEssen",Item.ITEMTYPE_FOOD,11),term));
-					addActor(new ItemGenerator(ColoredChar.create('F', Color.orange), new Item("TestEssen",Item.ITEMTYPE_FOOD,11),term));
-					addActor(new ItemGenerator(ColoredChar.create('F', Color.orange), new Item("TestEssen",Item.ITEMTYPE_FOOD,11),term));
-					addActor(new ItemGenerator(ColoredChar.create('F', Color.orange), new Item("TestEssen",Item.ITEMTYPE_FOOD,11),term));
-					addActor(new ItemGenerator(ColoredChar.create('F', Color.orange), new Item("TestEssen",Item.ITEMTYPE_FOOD,11),term));
-					addActor(new ItemGenerator(ColoredChar.create('F', Color.orange), new Item("TestEssen",Item.ITEMTYPE_FOOD,11),term));
-					addActor(new ItemGenerator(ColoredChar.create('F', Color.orange), new Item("TestEssen",Item.ITEMTYPE_FOOD,11),term));
-					addActor(new ItemGenerator(ColoredChar.create('F', Color.orange), new Item("TestEssen",Item.ITEMTYPE_FOOD,11),term));
+					addActor(new ItemGenerator(ColoredChar.create('F', Color.orange), new Item("TestEssen",Item.ITEMTYPE_FOOD,31),term));
+					addActor(new ItemGenerator(ColoredChar.create('F', Color.orange), new Item("TestEssen",Item.ITEMTYPE_FOOD,31),term));
+					addActor(new ItemGenerator(ColoredChar.create('F', Color.orange), new Item("TestEssen",Item.ITEMTYPE_FOOD,31),term));
+					addActor(new ItemGenerator(ColoredChar.create('F', Color.orange), new Item("TestEssen",Item.ITEMTYPE_FOOD,31),term));
+					addActor(new ItemGenerator(ColoredChar.create('F', Color.orange), new Item("TestEssen",Item.ITEMTYPE_FOOD,31),term));
+					addActor(new ItemGenerator(ColoredChar.create('F', Color.orange), new Item("TestEssen",Item.ITEMTYPE_FOOD,31),term));
+					addActor(new ItemGenerator(ColoredChar.create('F', Color.orange), new Item("TestEssen",Item.ITEMTYPE_FOOD,31),term));
+					addActor(new ItemGenerator(ColoredChar.create('F', Color.orange), new Item("TestEssen",Item.ITEMTYPE_FOOD,31),term));
+					addActor(new ItemGenerator(ColoredChar.create('F', Color.orange), new Item("TestEssen",Item.ITEMTYPE_FOOD,31),term));
+					addActor(new ItemGenerator(ColoredChar.create('F', Color.orange), new Item("TestEssen",Item.ITEMTYPE_FOOD,31),term));
+					addActor(new ItemGenerator(ColoredChar.create('F', Color.orange), new Item("TestEssen",Item.ITEMTYPE_FOOD,31),term));
+					addActor(new ItemGenerator(ColoredChar.create('F', Color.orange), new Item("TestEssen",Item.ITEMTYPE_FOOD,31),term));
 					
 					
 					
