@@ -31,6 +31,7 @@ public class ItemGenerator extends Actor {
         this.term = term;
     }
 
+
     @Override
     public void act() {
         Player player = world().getActorAt(Player.class, pos());

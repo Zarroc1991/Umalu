@@ -106,6 +106,7 @@ public class Frog_poisonous extends Monster {
 		}
 	    }
 
+
 	}
 
 

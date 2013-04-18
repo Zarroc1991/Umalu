@@ -106,6 +106,8 @@ public class Rat extends Monster {
 			e.printStackTrace();
 		}//catch
 	    }//fight
+	
+
 
 	}//class
 

@@ -108,6 +108,7 @@ public class Unbeliever extends Monster {
 			e.printStackTrace();
 		}
 	    }
+	
 
 	}
 

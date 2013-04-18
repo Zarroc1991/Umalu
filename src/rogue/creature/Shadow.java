@@ -107,6 +107,7 @@ public class Shadow extends Monster {
 		}
 	    }
 
+
 	}
 
 

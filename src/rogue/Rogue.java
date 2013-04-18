@@ -160,5 +160,5 @@ public class Rogue {
     		godmode=true;
     	}
     }
-
+    
 }

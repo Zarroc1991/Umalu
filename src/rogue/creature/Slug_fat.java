@@ -106,6 +106,8 @@ public class Slug_fat extends Monster {
 		}
 	    }
 
+
+	
 	}
 
 
