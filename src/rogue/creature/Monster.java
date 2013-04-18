@@ -110,6 +110,10 @@ public abstract class Monster extends Creature {
                         item = new Item("Kurzschwert", 0, Item.ITEMTYPE_SWORD, 1,0, 0,15);
                         world().addActor(new ItemGenerator(ColoredChar.create('W', Color.yellow), item ,term),x(),y());
                         }
+                    else{
+                    	 item =new Item("Froschschenkel",Item.ITEMTYPE_FOOD,3);
+                         world().addActor(new ItemGenerator(ColoredChar.create('F', Color.yellow), item ,term),x(),y());
+                    }
                     break;
 
                 }
@@ -177,6 +181,9 @@ public abstract class Monster extends Creature {
                         //Dumbarons Kolossschwert droppt zu 1/5
                         item = new Item("Dumbarons Kolossschwert", 0, Item.ITEMTYPE_SWORD, 0,27, 0,dumbaronLines, 10);
                         world().addActor(new ItemGenerator(ColoredChar.create('W', Color.yellow), item ,term),x(),y());
+                    }else{
+                    	 item =new Item("gebratener Hobbit",Item.ITEMTYPE_FOOD,50);
+                         world().addActor(new ItemGenerator(ColoredChar.create('F', Color.yellow), item ,term),x(),y());
                     }
                     break;
                 }

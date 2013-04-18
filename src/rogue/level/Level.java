@@ -69,20 +69,8 @@ public class Level extends World {
 					addActors(Slug_fat.class, term, 4);
 					addActor(new Frog_poisonous(term));
 					addActor(new ItemGenerator(ColoredChar.create('R', Color.yellow), new Item("Leichte R\u00fcstung", 0, Item.ITEMTYPE_HEAD, 0,0, 10,1), term));
-					addActor(new ItemGenerator(ColoredChar.create('F', Color.orange), new Item("TestEssen",Item.ITEMTYPE_FOOD,31),term));
-					addActor(new ItemGenerator(ColoredChar.create('F', Color.orange), new Item("TestEssen",Item.ITEMTYPE_FOOD,31),term));
-					addActor(new ItemGenerator(ColoredChar.create('F', Color.orange), new Item("TestEssen",Item.ITEMTYPE_FOOD,31),term));
-					addActor(new ItemGenerator(ColoredChar.create('F', Color.orange), new Item("TestEssen",Item.ITEMTYPE_FOOD,31),term));
-					addActor(new ItemGenerator(ColoredChar.create('F', Color.orange), new Item("TestEssen",Item.ITEMTYPE_FOOD,31),term));
-					addActor(new ItemGenerator(ColoredChar.create('F', Color.orange), new Item("TestEssen",Item.ITEMTYPE_FOOD,31),term));
-					addActor(new ItemGenerator(ColoredChar.create('F', Color.orange), new Item("TestEssen",Item.ITEMTYPE_FOOD,31),term));
-					addActor(new ItemGenerator(ColoredChar.create('F', Color.orange), new Item("TestEssen",Item.ITEMTYPE_FOOD,31),term));
-					addActor(new ItemGenerator(ColoredChar.create('F', Color.orange), new Item("TestEssen",Item.ITEMTYPE_FOOD,31),term));
-					addActor(new ItemGenerator(ColoredChar.create('F', Color.orange), new Item("TestEssen",Item.ITEMTYPE_FOOD,31),term));
-					addActor(new ItemGenerator(ColoredChar.create('F', Color.orange), new Item("TestEssen",Item.ITEMTYPE_FOOD,31),term));
-					addActor(new ItemGenerator(ColoredChar.create('F', Color.orange), new Item("TestEssen",Item.ITEMTYPE_FOOD,31),term));
-					
-					
+					addFood('F',Color.yellow,"Apfel",20,term,5);
+					addFood('F',Color.yellow,"Steak",30,term,3);
 					
 					break;
 			}
@@ -93,6 +81,9 @@ public class Level extends World {
 					addActors(Frog_poisonous.class,term,5);
 					addActors(Zombie.class,term,2);
 					addActor(new ItemGenerator(ColoredChar.create('R', Color.yellow), new Item("Lederr\u00fcstung", 0, Item.ITEMTYPE_HEAD,0, 0, 30,1), term));
+					addFood('F',Color.yellow,"Steak",30,term,3);
+					addFood('F',Color.yellow,"Beeren",10,term,8);
+					addFood('F',Color.yellow,"Kartoffeln",25,term,3);
 					break;
 			}
 			case 2: {
@@ -102,6 +93,9 @@ public class Level extends World {
 					addActors(Zombie.class,term,5);
 					addActors(Unbeliever.class,term,5);
 					addActor(new ItemGenerator(ColoredChar.create('R', Color.yellow), new Item("Kettenpanzer", 0, Item.ITEMTYPE_HEAD, 0,0, 50,1), term));
+					addFood('F',Color.yellow,"Beeren",10,term,8);
+					addFood('F',Color.yellow,"Kartoffeln",25,term,3);
+					addFood('F',Color.yellow,"Apfel",20,term,5);
 					break;
 			}
 			case 3:{
@@ -110,6 +104,10 @@ public class Level extends World {
 				addActors(Unbeliever.class,term,6);
 				addActors(Orc.class,term,2);
 				addActor(new ItemGenerator(ColoredChar.create('R', Color.yellow), new Item("Eisenr\u00fcstung", 0, Item.ITEMTYPE_HEAD,0, 0, 80,1), term));       
+				addFood('F',Color.yellow,"Beeren",10,term,5);
+				addFood('F',Color.yellow,"Kartoffeln",25,term,3);
+				addFood('F',Color.yellow,"Apfel",20,term,2);
+				addFood('F',Color.yellow,"Steak",30,term,3);
 				break;        
 			}
 			case 4:{
@@ -118,6 +116,10 @@ public class Level extends World {
 				addActors(Orc.class,term,6);
 				addActors(Shadow.class,term,5);
 				addActor(new ItemGenerator(ColoredChar.create('R', Color.yellow), new Item("Heilige R\u00fcstung", 0, Item.ITEMTYPE_HEAD,0, 0, 110,1), term));       
+				addFood('F',Color.yellow,"riesen Steaks",40,term,3);
+				addFood('F',Color.yellow,"Apfel",20,term,2);
+				addFood('F',Color.yellow,"Kartoffeln",25,term,2);
+				addFood('F',Color.yellow,"Beeren",10,term,5);
 				break;        
 			}
 			case 5:{
@@ -156,4 +158,14 @@ public class Level extends World {
         }
     }
 
+    public void addFood(char c, Color color, String name,int foodvalue, TiledTermPanel  term,int anzahl){
+    	gen.generate(this);
+    	for (int i=0;i<anzahl;i++){
+    	Item item= new Item(name,Item.ITEMTYPE_FOOD,foodvalue);
+    	addActor(new ItemGenerator(ColoredChar.create(c, color), item ,term));
+    	}
+    }
+    
 }
+
+
