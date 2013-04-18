@@ -61,9 +61,7 @@ public class Player extends Creature implements Camera {
 		this.tiledTerm = tiledTerm;
 		fov = new RayCaster();
 		// Initialise Hitpoints on Max
-                if (SystemHelper.debug) {
-                	maxHitpointsWithoutArmor = maxHitpointsWithoutArmor * 1000000;
-                }
+
         maxHitpoints = maxHitpointsWithoutArmor;
 		hitpoints = maxHitpoints;
 		strength_constant=strengthConstantWithoutArmor;

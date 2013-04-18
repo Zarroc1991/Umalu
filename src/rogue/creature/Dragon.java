@@ -7,6 +7,8 @@ package rogue.creature;
 
 import java.awt.Color;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
 import java.util.Random;
 
 import jade.fov.RayCaster;
@@ -14,6 +16,7 @@ import jade.path.AStar;
 import jade.path.PathFinder;
 import jade.util.Dice;
 import jade.util.datatype.ColoredChar;
+import jade.util.datatype.Coordinate;
 import jade.util.datatype.Direction;
 import jade.ui.Terminal;
 
@@ -38,25 +41,41 @@ public class Dragon extends Monster {
 	    }
 
 	@Override
-    public void act() {
+	public void act() {
+    	world().setStepInt(x(), y());
+        for (Direction dir : Arrays.asList(Direction.values())) {
+            Player player = world().getActorAt(Player.class, x() + dir.dx(), y() + dir.dy());
 
-		boolean fight = false;
-		
-		for (Direction dir : Arrays.asList(Direction.values())) {
-			Player player = world().getActorAt(Player.class, x() + dir.dx(),
-					y() + dir.dy());
-			if (player != null) {
-				fight(player);
-				fight = true;
-				break;
-			}
-		}
+            if (player != null && world().tileAt(pos().x()+dir.dx(),pos().y()+dir.dy())!=ColoredChar.create('\u2020', new Color(199,21,133))) {
+                fight(player);
 
-		if (!fight) {
-			move(Dice.global.choose(Arrays.asList(Direction.values())));
-		}
-	}
+                return;
 
+            }//if(player!=null)
+
+        }//for(Direction dir... 
+
+            Collection<Coordinate> viewField = fov.getViewField(this.world(), this.pos().x(), this.pos().y(), attackRadius);
+            for (Coordinate coordinate : viewField) {
+                if (this.world().getActorAt(Player.class, coordinate) != null) {
+
+                	List<Coordinate> path = pathfinder.getPath(this.world(), this.pos(), coordinate);
+                    if(path!=null){
+                	Direction dir = this.pos().directionTo(path.get(0));
+                	if(world().tileAt(pos().x()+dir.dx(),pos().y()+dir.dy())!=ColoredChar.create('\u2020', new Color(199,21,133))){
+                    move(dir);
+                    return;
+                	}//if(world()
+                    }//if(path...                    
+                }//if(this.world()...
+            }//for(Coordinate ...
+
+                Direction dir =Dice.global.choose(Arrays.asList(Direction.values()));
+                if (world().tileAt(x() + dir.dx(), y() + dir.dy()) != ColoredChar.create('\u2020', new Color(199,21,133))){
+                	move(dir);
+                }//end of if
+
+            }//act
 	@Override
 	/**
 	 * Allows this monster to figth against the player

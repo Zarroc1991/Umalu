@@ -14,7 +14,7 @@ public class Arena extends NewWorld {
 		generateStep(world,dice,Path.generateAbsolutePath("maps/Arena.txt"),5, true);
                 for (int i = 0; i < world.width(); i++) {
                     for (int j = 0; j < world.height(); j++) {
-                        world.viewable(j, j);
+                        world.viewable(i, j);
 
                     }
 
