@@ -4,9 +4,11 @@ import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Random;
 
+import rogue.Rogue;
 import rogue.creature.util.Item;
 import rogue.creature.util.NotEnoughSpaceException;
 import rogue.level.Screen;
+import rogue.system.Path;
 import jade.gen.map.ItemGenerator;
 import jade.util.datatype.ColoredChar;
 import jade.ui.Terminal;
@@ -47,7 +49,7 @@ public abstract class Monster extends Creature {
      */
     // TODO Clean up Messages in Console, to use just a single line
     abstract public void fight(Player opponent); 
-    public void dropItem(Monster opponent,TiledTermPanel term){
+    public void dropItem(Monster opponent,TiledTermPanel term) throws InterruptedException{
     	Random random = new Random();
 		Screen.redrawEventLine(opponent.name+" stirbt");
 		System.out.println(opponent.name+" stirbt");
@@ -203,7 +205,7 @@ public abstract class Monster extends Creature {
                  }
                 case 99: {
                     //Dragon
-                    //droppt nichts
+                	Rogue.win(term, world());
                 }
                 default: {
                     break;

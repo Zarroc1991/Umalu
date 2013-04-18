@@ -113,6 +113,14 @@ public class Rogue {
 
 	}
 		
+	public static void win(TiledTermPanel term, World world) throws InterruptedException{
+		
+		Screen.showFile(Path.generatePath("maps/win.txt"), term, world);
+		term.getKey();
+		System.exit(0);
+		
+	}
+	
 	public static String getHPLine (Player player){
 		String a="HP: "+Math.round(player.getHitpoints()*10)/10.0+"/"+Math.round(player.getMaxHitpoints());
 		return(player.makeRightString(a,20));
