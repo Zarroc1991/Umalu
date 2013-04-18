@@ -371,17 +371,20 @@ public class Inventory {
             lines.add("");
             for (int i = 0; i < backpackSpaces.size(); i++) {
                 // Zeige das Item an Stelle an i an
-                lines.add("(" + i + ") " + backpackSpaces.get(i).getName()
-                        + "[+DMG: " + backpackSpaces.get(i).getDamageConstantBonus()
-                        + "|"		+ backpackSpaces.get(i).getDamageRandomBonus()
-                        + ", +HP: " + backpackSpaces.get(i).getHealthBonus()
-                        + ", Dura: "+ backpackSpaces.get(i).getDurability()
-                        +"/"		+ backpackSpaces.get(i).getMaxDurability()+"]");
+
+            	lines.add(makeRightString("(" + i + ") " + backpackSpaces.get(i).getName(),30) 
+                		+ "[+DMG: " + backpackSpaces.get(i).getDamageConstantBonus()
+                		+"-"		+ (backpackSpaces.get(i).getDamageRandomBonus()+backpackSpaces.get(i).getDamageConstantBonus())
+                		+ ", +HP: " + backpackSpaces.get(i).getHealthBonus()
+                		+ ", Dura: "+ backpackSpaces.get(i).getDurability()
+                		+ "/"		+ backpackSpaces.get(i).getMaxDurability()+"]");
 
             }
             lines.add("");
             lines.add("Gefunden: " + item.getName() + " [+DMG: "
-                    + item.getDamageConstantBonus() +"|"+item.getDamageRandomBonus()+ ", +HP: " + item.getHealthBonus()
+                    + item.getDamageConstantBonus() +"-"		
+            		+ (item.getDamageRandomBonus()+item.getDamageConstantBonus())
+            		+ ", +HP: " + item.getHealthBonus()
                     + ", Dura: "+ item.getDurability()+"/"+item.getMaxDurability()+"]");
             lines.add("");
             lines.add("Waehle nun: <0>-<4> Rucksackgegenstand zerstoeren");
@@ -520,5 +523,15 @@ public class Inventory {
 
 	}
 }
-	
+
+    public String makeRightString(String a,int len){
+    	String longString=a;
+    	while (longString.length()<len){
+    		longString=longString+" ";
+    	}//while
+    	if (longString.length()>len){
+    		longString=longString.substring(0,len);
+    	}
+    	return(longString);
+    }//makeRightString
 }
