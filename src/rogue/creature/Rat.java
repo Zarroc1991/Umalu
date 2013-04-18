@@ -60,7 +60,8 @@ public class Rat extends Monster {
                     if(path!=null){
                 	Direction dir = this.pos().directionTo(path.get(0));
                 	if(world().tileAt(pos().x()+dir.dx(),pos().y()+dir.dy())!=ColoredChar.create('\u2020', new Color(199,21,133))){
-                    move(dir);
+                    
+                		move(dir);
                     return;
                 	}//if(world()
                     }//if(path...                    

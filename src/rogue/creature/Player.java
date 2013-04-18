@@ -42,6 +42,9 @@ public class Player extends Creature implements Camera {
 	public Boolean worldchangeup = false; 
 	private int hpCycle=10;
 	public int round=0;
+	private Boolean god1;
+	private Boolean god2;
+	private Boolean god3;
 
 	/**
 	 * Creates a new Player Object
@@ -67,7 +70,7 @@ public class Player extends Creature implements Camera {
 		strength_random = strengthRandomWithoutArmor;
 		full=100;
         inventory = new Inventory(5,10,50);
-                
+        god1=false;god2=false;god3=false;
 
 		
 
@@ -122,33 +125,53 @@ public class Player extends Creature implements Camera {
 			switch (key) {
 			case 'b': // User wants to quit 
 				confirmQuit(); // Leave let player die, so this application quits
+				god1=false;god2=false;god3=false;
 				break;
 			case 'i': // Show Inventory
+				god1=false;god2=false;
 				showInventoryScreen();
                                 updateHP();
                                 updateStrength();
 
 				break;
 			case 'o':
+				god1=false;god2=false;god3=false;
 				HelpScreen.printMainHelpScreen();
-				break;
-			case 'g':
-				Rogue.switchGodmode();
-				world().switchViewable();
-				if (Rogue.getGodmode()){
-					maxHitpointsWithoutArmor=1500;
-					strengthConstantWithoutArmor = 100;
-				}else{
-					maxHitpointsWithoutArmor=15;
-					strengthConstantWithoutArmor = 1;
-				}
-	            updateHP();
-                updateStrength();
 				break;
 	
 			case 'h':
+				god1=true;
 				Screen.showEventLog();
-				term.getKey();
+				if(term.getKey()=='e'){
+					god2=true;
+				}else{
+					god1=false;god2=false;god3=false;
+				}
+				break;
+
+			case 'l':
+				if (god1 & god2){
+					god3=true;
+				}else{
+					god1=false;god2=false;god3=false;
+				}
+				break;
+			case 'p':
+				if (god1 & god2 & god3){
+					Rogue.switchGodmode();
+					world().switchViewable();
+					if (Rogue.getGodmode()){
+						maxHitpointsWithoutArmor=1500;
+						strengthConstantWithoutArmor = 100;
+					}else{
+						maxHitpointsWithoutArmor=15;
+						strengthConstantWithoutArmor = 1;
+					}
+		            updateHP();
+	                updateStrength();	
+				}else{
+					god1=false;god2=false;god3=false;
+				}
 				break;
 			default: // User pressed something else
 				Direction dir = Direction.keyToDir(key); // Get direction
