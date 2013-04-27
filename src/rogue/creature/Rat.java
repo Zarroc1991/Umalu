@@ -82,30 +82,21 @@ public class Rat extends Monster {
 	 * Allows this monster to figth against the player
 	 */
 	public void fight(Player opponent) {
-		
-	        System.out.println("Die " + name + " greift dich an");
 		// Generate Damage
 	        int abzug = makeDamage(strength_constant, strength_random);
 		// Do Damage to Oppenent
 	        opponent.loseHitpoints(abzug);
+	        String dam=" "+name+" macht "+abzug+" Schaden.";
 		// Print Result
             Random generator = new Random();
             int ran = generator.nextInt( 4 );
             switch(ran){
-            	case 0:Screen.showEventLineAndPutToConsole("Ihre Z\u00e4hne stecken in deinem Hintern.",true, true);break;
-            	case 1:Screen.showEventLineAndPutToConsole("Sie bei\u00dft in deinen gro\u00dfen Zeh", true, true);break;
-            	case 2:Screen.showEventLineAndPutToConsole("Tollwutalarm",true, true);break;
-            	case 3:Screen.showEventLineAndPutToConsole("Sie quieckt so laut.", true, true);break;
+            	case 0:Screen.showEventLineAndPutToConsole("Ihre Z\u00e4hne stecken in deinem Hintern."+dam,true, true);break;
+            	case 1:Screen.showEventLineAndPutToConsole("Sie bei\u00dft in deinen gro\u00dfen Zeh."+dam, true, true);break;
+            	case 2:Screen.showEventLineAndPutToConsole("Tollwutalarm!!"+dam,true, true);break;
+            	case 3:Screen.showEventLineAndPutToConsole("Sie quieckt so laut."+dam, true, true);break;
 	        }//switch
-	        System.out.println("Du hast "+ abzug + " HP verloren");
-	        System.out.println("verbleibende HP: "+ opponent.hitpoints);
-		Screen.redrawEventLine(name+" macht "+abzug+" Schaden (Rest: "+opponent.hitpoints+")");
-		try {
-			term.getKey();
-		} catch(InterruptedException e) {
-			System.out.println("!InterruptedException");
-			e.printStackTrace();
-		}//catch
+		
 	    }//fight
 	
 

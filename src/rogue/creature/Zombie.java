@@ -82,30 +82,21 @@ public class Zombie extends Monster {
 	 * Allows this monster to figth against the player
 	 */
 	public void fight(Player opponent) {
-		// TODO Auto-generated method stub {
-	        System.out.println("Ein"+ name + " attackiert dich");
 		// Generate Damage
 	        int abzug = makeDamage(strength_constant, strength_random);
 		// Do Damage to Oppenent
 	        opponent.loseHitpoints(abzug);
-		// Print Result
+	        String dam=" "+name+" macht "+abzug+" Schaden.";
+	        // Print Result
 	           Random generator = new Random();
 	            int ran = generator.nextInt( 4 );
 	            switch(ran){
-	            	case 0:Screen.showEventLineAndPutToConsole("Er bewirft dich mit einem Arm.", true, true);break;
-	            	case 1:Screen.showEventLineAndPutToConsole("Er hat ein Auge auf dich geworfen.", true, true);break;//optional hier alles sichtbare loeschen
-	            	case 2:Screen.showEventLineAndPutToConsole("Er packt dein Kopf und will dein Gehirn.", true, true);break;
-	            	case 3:Screen.showEventLineAndPutToConsole("Sein Gestank raubt dir den Atem.", true, true);break;
+	            	case 0:Screen.showEventLineAndPutToConsole("Er bewirft dich mit einem Arm."+dam, true, true);break;
+	            	case 1:Screen.showEventLineAndPutToConsole("Er hat ein Auge auf dich geworfen."+dam, true, true);break;//optional hier alles sichtbare loeschen
+	            	case 2:Screen.showEventLineAndPutToConsole("Er packt dein Kopf und will dein Gehirn."+dam, true, true);break;
+	            	case 3:Screen.showEventLineAndPutToConsole("Sein Gestank raubt dir den Atem."+dam, true, true);break;
 		        }
-	        System.out.println("Du hast "+ abzug + " HP verloren");
-	        System.out.println("verbleibende HP: "+ opponent.hitpoints);
-		Screen.redrawEventLine(name+" macht "+abzug+" Schaden (Rest: "+opponent.hitpoints+")");
-		try {
-			term.getKey();
-		} catch(InterruptedException e) {
-			System.out.println("!InterruptedException");
-			e.printStackTrace();
-		}
+	        
 	    }
 
 

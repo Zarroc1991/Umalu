@@ -83,30 +83,21 @@ public class Unbeliever extends Monster {
 	 * Allows this monster to figth against the player
 	 */
 	public void fight(Player opponent) {
-		// TODO Auto-generated method stub {
-	        System.out.println("Der " + name + " greift dich an");
 		// Generate Damage
 	        int abzug = makeDamage(strength_constant, strength_random);
 		// Do Damage to Oppenent
 	        opponent.loseHitpoints(abzug);
+	        String dam=" "+name+" macht "+abzug+" Schaden.";
 		// Print Result
 	           Random generator = new Random();
 	            int ran = generator.nextInt( 4 );
 	            switch(ran){
-	            	case 0:Screen.showEventLineAndPutToConsole("'Dein Gott ist eine Illusion.'", true, true);break;
-	            	case 1:Screen.showEventLineAndPutToConsole("'Kremsgrdr mag dich nicht mehr.'", true, true);break;//optional hier alles sichtbare l�schen
-	            	case 2:Screen.showEventLineAndPutToConsole("'YOLO'", true, true);break;
-	            	case 3:Screen.showEventLineAndPutToConsole("'Sieh doch ein das Kremsgrdr dir nicht hilft.'", true, true);break;
+	            	case 0:Screen.showEventLineAndPutToConsole("'Dein Gott ist eine Illusion.'"+dam, true, true);break;
+	            	case 1:Screen.showEventLineAndPutToConsole("'Kremsgrdr mag dich nicht mehr.'"+dam, true, true);break;//optional hier alles sichtbare l�schen
+	            	case 2:Screen.showEventLineAndPutToConsole("'YOLO'"+dam, true, true);break;
+	            	case 3:Screen.showEventLineAndPutToConsole("'Sieh doch ein das Kremsgrdr dir nicht hilft.'"+dam, true, true);break;
 		        }
-	        System.out.println("Du hast "+ abzug + " HP verloren");
-	        System.out.println("verbleibende HP: "+ opponent.hitpoints);
-		Screen.redrawEventLine(name+" macht "+abzug+" Schaden (Rest: "+opponent.hitpoints+")");
-		try {
-			term.getKey();
-		} catch(InterruptedException e) {
-			System.out.println("!InterruptedException");
-			e.printStackTrace();
-		}
+	       
 	    }
 	
 

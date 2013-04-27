@@ -80,31 +80,21 @@ public class Shadow extends Monster {
 	 * Allows this monster to figth against the player
 	 */
 	public void fight(Player opponent) {
-		// TODO Auto-generated method stub {
-	        System.out.println("Ein " + name + "erhebt sich.");
 		// Generate Damage
 	        int abzug = makeDamage(strength_constant, strength_random);
 		// Do Damage to Oppenent
 	        opponent.loseHitpoints(abzug);
+	        String dam=" "+name+" macht "+abzug+" Schaden.";
 		// Print Result
 	        Random generator = new Random();
             int ran = generator.nextInt( 5 );
             switch(ran){
-            	case 0:Screen.showEventLineAndPutToConsole("Eine unerträgliche leere ergreift dich.", true, true);break;
+            	case 0:Screen.showEventLineAndPutToConsole("Eine unerträgliche leere ergreift dich."+dam, true, true);break;
             	case 1:Screen.showEventLineAndPutToConsole("Du kannst nichts sehen.", true, true);break;//optional hier alles sichtbare lï¿½schen
-            	case 2:Screen.showEventLineAndPutToConsole("Dein gr\u00f6\u00fcter Albtraum spielt sich in deinem Kopf ab.", true, true);break;
-            	case 3:Screen.showEventLineAndPutToConsole("Dein Herz fühlt sich so kalt an.", true, true);break;
-            	case 4:Screen.showEventLineAndPutToConsole("Du hast schreckliche Angst.", true, true);break;
+            	case 2:Screen.showEventLineAndPutToConsole("Dein gr\u00f6\u00fcter Albtraum spielt sich in deinem Kopf ab."+dam, true, true);break;
+            	case 3:Screen.showEventLineAndPutToConsole("Dein Herz fühlt sich so kalt an."+dam, true, true);break;
+            	case 4:Screen.showEventLineAndPutToConsole("Du hast schreckliche Angst."+dam, true, true);break;
 	        }
-	        System.out.println("Du hast "+ abzug + " HP verloren");
-	        System.out.println("verbleibende HP: "+ opponent.hitpoints);
-		Screen.redrawEventLine(name+" macht "+abzug+" Schaden (Rest: "+opponent.hitpoints+")");
-		try {
-			term.getKey();
-		} catch(InterruptedException e) {
-			System.out.println("!InterruptedException");
-			e.printStackTrace();
-		}
 	    }
 
 

@@ -81,31 +81,22 @@ public class Dragon extends Monster {
 	 * Allows this monster to figth against the player
 	 */
 	public void fight(Player opponent) {
-		// TODO Auto-generated method stub {
-	        System.out.println("Ra's al Ghul greift dich an");
 		// Generate Damage
 	        int abzug =makeDamage(strength_constant, strength_random);
 		// Do Damage to Oppenent
 	        opponent.loseHitpoints(abzug);
-		// Print Result
+	        String dam=" "+name+" macht "+abzug+" Schaden";
+	        
+	    // Print Result
             Random generator = new Random();
             int ran = generator.nextInt( 4 );
             switch(ran){
-            	case 0:Screen.showEventLineAndPutToConsole("Er verbrennt dir den Arsch!", true, true);break;
-            	case 1:Screen.showEventLineAndPutToConsole("Eine Drachenkralle trifft dich.", true, true);break;
-            	case 2:Screen.showEventLineAndPutToConsole("Iiiihh er hat dich angefurzt.", true, true);break;
-            	case 3:Screen.showEventLineAndPutToConsole("Aua Drachenz\u00e4hne sind scharf", true, true);break;
+            	case 0:Screen.showEventLineAndPutToConsole("Er verbrennt dir den Arsch!"+dam, true, true);break;
+            	case 1:Screen.showEventLineAndPutToConsole("Eine Drachenkralle trifft dich."+dam, true, true);break;
+            	case 2:Screen.showEventLineAndPutToConsole("Iiiihh er hat dich angefurzt."+dam, true, true);break;
+            	case 3:Screen.showEventLineAndPutToConsole("Aua Drachenz\u00e4hne sind scharf."+dam, true, true);break;
 	        }
-	        System.out.println("Du hast "+ abzug + " HP verloren");
-	        System.out.println("verbleibende HP: "+ opponent.hitpoints);
-		Screen.redrawEventLine(name+" macht "+abzug+" Schaden (Rest: "+opponent.hitpoints+")");
-		try {
-			term.getKey();
-		} catch(InterruptedException e) {
-			System.out.println("!InterruptedException");
-			e.printStackTrace();
-		}
-	    }
+        }
 
 
 	}

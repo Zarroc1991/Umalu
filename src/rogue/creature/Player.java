@@ -265,16 +265,14 @@ public class Player extends Creature implements Camera {
         System.out.println("Du kämpfst gegen " + opponent.name());
         // Get random Damage for Attack
         reduceFull();
-        int damage =makeDamage(strength_constant, strength_random);//random.nextInt(strength) + 1;
-        // Print result
-
-        System.out.println("Du hast " + damage + " Schaden verursacht");
-        System.out.println(opponent.name() + " hat noch " + opponent.hitpoints
-                + " HP");
-        Screen.redrawEventLine("Du verursachst " + damage + " Schaden");
-       
+        int damage =makeDamage(strength_constant, strength_random);
+                
         // Do Damage to Opponent
         boolean opponentDied = opponent.loseHitpoints(damage);
+        
+        // Print result
+        Screen.redrawEventLine(makeRightString("Du verursachst " + damage + " Schaden. "+opponent.name()+" hat noch "+opponent.hitpoints+" HP.",79));
+       
         
         try {
             term.getKey();
@@ -467,7 +465,7 @@ public class Player extends Creature implements Camera {
             for (int i = 0; i < lunchbox.size(); i++) {
                 // Zeige das Item an Stelle an i an
                 lines.add(makeRightString("(" + i + ") " + lunchbox.get(i).getName(),30) 
-                		+ "Nährwert: "+lunchbox.get(i).getFoodValue()
+                		+ "Nährwert: "+makeRightString(""+lunchbox.get(i).getFoodValue(),3)
                 		+ " Anzahl: "  +lunchbox.get(i).getNumber());
 			}
             lines.add("");

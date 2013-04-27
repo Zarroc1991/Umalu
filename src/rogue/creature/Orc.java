@@ -80,30 +80,21 @@ public class Orc extends Monster {
 	 * Allows this monster to figth against the player
 	 */
 	public void fight(Player opponent) {
-		// TODO Auto-generated method stub {
-	        System.out.println("Der " + name + " greift dich an");
 		// Generate Damage
 	        int abzug = makeDamage(strength_constant, strength_random);
 		// Do Damage to Oppenent
 	        opponent.loseHitpoints(abzug);
+	        String dam=" "+name+" macht "+abzug+" Schaden.";
 		// Print Result
 	        Random generator = new Random();
             int ran = generator.nextInt( 4 );
             switch(ran){
-            	case 0:Screen.showEventLineAndPutToConsole("Seine riesen Faust trifft dein Gesicht.", true, true);break;
-            	case 1:Screen.showEventLineAndPutToConsole("Das Unget\u00fcm rammt dich um.", true, true);break;//optional hier alles sichtbare loeschen
-            	case 2:Screen.showEventLineAndPutToConsole("Er schleudert dich durch die Luft.", true, true);break;
-            	case 3:Screen.showEventLineAndPutToConsole("Sein Gestank l\u00e4hmt dich.", true, true);break;
+            	case 0:Screen.showEventLineAndPutToConsole("Seine riesen Faust trifft dein Gesicht."+dam, true, true);break;
+            	case 1:Screen.showEventLineAndPutToConsole("Das Unget\u00fcm rammt dich um."+dam, true, true);break;//optional hier alles sichtbare loeschen
+            	case 2:Screen.showEventLineAndPutToConsole("Er schleudert dich durch die Luft."+dam, true, true);break;
+            	case 3:Screen.showEventLineAndPutToConsole("Sein Gestank l\u00e4hmt dich."+dam, true, true);break;
 	        }
-	        System.out.println("Du hast "+ abzug + " HP verloren");
-	        System.out.println("verbleibende HP: "+ opponent.hitpoints);
-		Screen.redrawEventLine(name+" macht "+abzug+" Schaden (Rest: "+opponent.hitpoints+")");
-		try {
-			term.getKey();
-		} catch(InterruptedException e) {
-			System.out.println("!InterruptedException");
-			e.printStackTrace();
-		}
+	        
 	    }
 
 }

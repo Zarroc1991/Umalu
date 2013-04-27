@@ -80,30 +80,21 @@ public class Frog_poisonous extends Monster {
 	 * Allows this monster to figth against the player
 	 */
 	public void fight(Player opponent) {
-		// TODO Auto-generated method stub {
-	        System.out.println("Der " + name + " greift dich an");
 		// Generate Damage
 	        int abzug =makeDamage(strength_constant, strength_random);
 		// Do Damage to Oppenent
 	        opponent.loseHitpoints(abzug);
+	        String dam=" "+name+" macht "+abzug+" Schaden.";
 		// Print Result
 	           Random generator = new Random();
 	            int ran = generator.nextInt( 4 );
 	            switch(ran){
-	            	case 0:Screen.showEventLineAndPutToConsole("Seine Gift brennt sich in deine Haut.", true, true);break;
-	            	case 1:Screen.showEventLineAndPutToConsole("Aaarrhhh... Du hast sein Gift im Auge.", true, true);break;//optional hier alles sichtbare l�schen
-	            	case 2:Screen.showEventLineAndPutToConsole("Du untersch\u00e4tzt dieses kleine Vieh.", true, true);break;
-	            	case 3:Screen.showEventLineAndPutToConsole("NEIN... Deine Haut wird ver\u00e4tzt.", true, true);break;
+	            	case 0:Screen.showEventLineAndPutToConsole("Seine Gift brennt sich in deine Haut."+dam, true, true);break;
+	            	case 1:Screen.showEventLineAndPutToConsole("Aaarrhhh... Du hast sein Gift im Auge."+dam, true, true);break;//optional hier alles sichtbare l�schen
+	            	case 2:Screen.showEventLineAndPutToConsole("Du untersch\u00e4tzt dieses kleine Vieh."+dam, true, true);break;
+	            	case 3:Screen.showEventLineAndPutToConsole("NEIN... Deine Haut wird ver\u00e4tzt."+dam, true, true);break;
 		        }
-	        System.out.println("Du hast "+ abzug + " HP verloren");
-	        System.out.println("verbleibende HP: "+ opponent.hitpoints);
-		Screen.redrawEventLine(name+" macht "+abzug+" Schaden (Rest: "+opponent.hitpoints+")");
-		try {
-			term.getKey();
-		} catch(InterruptedException e) {
-			System.out.println("!InterruptedException");
-			e.printStackTrace();
-		}
+	        
 	    }
 
 

@@ -80,30 +80,20 @@ public class Slug_fat extends Monster {
 	 * Allows this monster to figth against the player
 	 */
 	public void fight(Player opponent) {
-		// TODO Auto-generated method stub {
-	        System.out.println("Die " + name + " greift dich an");
 		// Generate Damage
 	        int abzug = makeDamage(strength_constant, strength_random);
 		// Do Damage to Oppenent
 	        opponent.loseHitpoints(abzug);
+	        String dam=" "+name+" macht "+abzug+" Schaden.";
 		// Print Result
             Random generator = new Random();
             int ran = generator.nextInt( 4 );
             switch(ran){
-            	case 0:Screen.showEventLineAndPutToConsole("Ihr Schleim stinkt f\u00fcrchterlich.", true, true);break;
-            	case 1:Screen.showEventLineAndPutToConsole("Sie spuckt dich voll Schleim...", true, true);break;
-            	case 2:Screen.showEventLineAndPutToConsole("Ahhh sie zieht eine Schleimspur \u00fcber dich.", true, true);break;
-            	case 3:Screen.showEventLineAndPutToConsole("Sie setzt sich auf dich.", true, true);break;
+            	case 0:Screen.showEventLineAndPutToConsole("Ihr Schleim stinkt f\u00fcrchterlich."+dam, true, true);break;
+            	case 1:Screen.showEventLineAndPutToConsole("Sie spuckt dich voll Schleim..."+dam, true, true);break;
+            	case 2:Screen.showEventLineAndPutToConsole("Ahhh sie zieht eine Schleimspur \u00fcber dich."+dam, true, true);break;
+            	case 3:Screen.showEventLineAndPutToConsole("Sie setzt sich auf dich."+dam, true, true);break;
 	        }
-	        System.out.println("Du hast "+ abzug + " HP verloren");
-	        System.out.println("verbleibende HP: "+ opponent.hitpoints);
-		Screen.redrawEventLine(name+" macht "+abzug+" Schaden (Rest: "+opponent.hitpoints+")");
-		try {
-			term.getKey();
-		} catch(InterruptedException e) {
-			System.out.println("!InterruptedException");
-			e.printStackTrace();
-		}
 	    }
 
 
