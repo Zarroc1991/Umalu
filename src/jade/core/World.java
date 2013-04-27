@@ -682,7 +682,6 @@ public abstract class World extends Messenger
 		{
 
 			passable = true;
-
 			viewable = Rogue.getGodmode();
 			//jedes Tile erhält nocht die Eigenschaft der Sichtbarkeit 
 
