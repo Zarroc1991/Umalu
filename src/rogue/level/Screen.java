@@ -322,35 +322,36 @@ public class Screen {
 		int b=0;
 		
 		while (a<hp.length()){
-			lastTerminal.bufferChar(a, (lastWorld.height()-1),
+			lastTerminal.bufferChar(a, (lastWorld.height()),
 			ColoredChar.create(hp.charAt(a),hpColor));
 			a++;
 		}
 		while (a<hp.length()+dmg.length()){
-			lastTerminal.bufferChar(a, (lastWorld.height()-1),
+			lastTerminal.bufferChar(a, (lastWorld.height()),
 			ColoredChar.create(dmg.charAt(b)));
 			a++;
 			b++;
 		}
 		b=0;
 		while (a<hp.length()+dmg.length()+full.length()){
-			lastTerminal.bufferChar(a, (lastWorld.height()-1),
+			lastTerminal.bufferChar(a, (lastWorld.height()),
 			ColoredChar.create(full.charAt(b),fullColor));
 			a++;
 			b++;
 		}
 		b=0;
 		while (a<hp.length()+dmg.length()+full.length()+lvl.length()){
-			lastTerminal.bufferChar(a, (lastWorld.height()-1),
+			lastTerminal.bufferChar(a, (lastWorld.height()),
 			ColoredChar.create(lvl.charAt(b)));
 			a++;
 			b++;
 		}
 		
 		for (int x = 0; x < itemLine.length(); x++) {
-			lastTerminal.bufferChar(x, (lastWorld.height()),
+			lastTerminal.bufferChar(x, (lastWorld.height()+1),
 					ColoredChar.create(itemLine.charAt(x)));
 		}
+		
 		lastTerminal.refreshScreen();
 	}
 	
@@ -363,12 +364,12 @@ public class Screen {
 	public static void redrawEventLine(String eventLine) {
 		int x;
 		for (x = 0; x < eventLine.length(); x++) {
-			lastTerminal.bufferChar(x, lastWorld.height() + 1,
+			lastTerminal.bufferChar(x, 0,
 					ColoredChar.create(eventLine.charAt(x)));
 		}
 		
 		while (x < lastWorld.width()) {
-			lastTerminal.bufferChar(x, lastWorld.height() + 1,
+			lastTerminal.bufferChar(x, 0,
 					ColoredChar.create(' '));
 			x++;
 		}
@@ -389,12 +390,12 @@ public class Screen {
 	public static void redrawEventLine(String eventLine, boolean saveInLog) {
 		int x;
 		for (x = 0; x < eventLine.length(); x++) {
-			lastTerminal.bufferChar(x, lastWorld.height() + 1,
+			lastTerminal.bufferChar(x,0,
 					ColoredChar.create(eventLine.charAt(x)));
 		}
 		
 		while (x < lastWorld.width()) {
-			lastTerminal.bufferChar(x, lastWorld.height() + 1,
+			lastTerminal.bufferChar(x,0,
 					ColoredChar.create(' '));
 			x++;
 		}

@@ -391,9 +391,9 @@ public abstract class World extends Messenger
 	
 	public void switchViewable(){
 		int x=0;
-		int y=0;
+		int y=2;
 		while (x<=79){
-			while(y<=29){
+			while(y<=31){
 				grid[x][y].viewable = Rogue.getGodmode() ;
 				y++;
 			}
@@ -683,7 +683,7 @@ public abstract class World extends Messenger
 
 			passable = true;
 
-			viewable = Rogue.getGodmode();
+			viewable = true;//Rogue.getGodmode();
 			//jedes Tile erhält nocht die Eigenschaft der Sichtbarkeit 
 
 

@@ -43,7 +43,7 @@ public class Rogue {
 		
 		
 		// Generate a new World
-		World world = new Level(80, 33, player, levelorder.get(level), level,true,
+		World world = new Level(83, 34, player, levelorder.get(level), level,true,
 				term);
 		// Show Splashscreen for Start
 		Screen.showFile(Path.generateAbsolutePath("maps/start.txt"), term,
@@ -69,13 +69,13 @@ public class Rogue {
 			if (player.worldchangeup) { // Überprüft, ob einen Levelup erfolgt ist
 				world.removeActor(player); // entfernt Spieler aus der alten
 											// Welt
-				world = new Level(80, 33, player, levelorder.get(++level),
+				world = new Level(80, 34, player, levelorder.get(++level),
 						level,true, term); // lädt das nächste Level
 				player.setWorld(world); // Spieler erkennt seine Welt
 				player.worldchangeup = false;
 			} else if (player.worldchangedown) {
 				world.removeActor(player); // entfernt Spieler aus der alten						// Welt
-				world = new Level(80, 33, player, levelorder.get(--level),
+				world = new Level(80, 34, player, levelorder.get(--level),
 						level,false, term); // lädt das nächste Level
 				player.setWorld(world); // Spieler erkennt seine Welt
 				player.worldchangedown = false;

@@ -48,6 +48,7 @@ public abstract class NewWorld extends MapGenerator {
 			notPassable.add('~');
 			notPassable.add('^');
 			notPassable.add(';');
+			notPassable.add(' ');
 			while (line != null) {
 				int i;
 
