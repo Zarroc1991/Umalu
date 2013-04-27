@@ -102,7 +102,7 @@ public class Screen {
 					else{
 					term.bufferChar(i, lineNumber, ColoredChar.create(c));
 					}
-					Thread.sleep(5);
+					//Thread.sleep(5);
 					term.refreshScreen();}
 
 				// Fill rest of Line with Whitespaces

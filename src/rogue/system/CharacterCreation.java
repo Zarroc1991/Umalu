@@ -46,7 +46,7 @@ public class CharacterCreation {
 						break;
 					default:
 						// Has Maximumlength of Name been reached?
-						if (name.length() < 8) { // No
+						if (name.length() < 20) { // No
 							// Check what kind of Character has been pressed
 							if (valueIsInIntervall((int)'0',(int)'9',(int)c) ||
 								valueIsInIntervall((int)'a',(int)'z',(int)c) ||

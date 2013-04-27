@@ -45,22 +45,23 @@ public class Rogue {
 		// Generate a new World
 		World world = new Level(83, 34, player, levelorder.get(level), level,true,
 				term);
-		// Show Splashscreen for Start
+		//Show Splashscreen for Start
 		Screen.showFile(Path.generateAbsolutePath("maps/start.txt"), term,
 				world);
 		term.getKey();
 		player.setName(CharacterCreation.getCharacterName(term, world));
-		Screen.printLine(player.getName(),term,world);
-		term.getKey();
+		//Screen.printLine(player.getName(),term,world);
+		//term.getKey();
 		
 		
 		
-		Screen.showFile(Path.generateAbsolutePath("maps/start.txt"),term,world);
+		//Screen.showFile(Path.generateAbsolutePath("maps/start.txt"),term,world);
 		
-		/*Zeigt Intro 
+		//Zeigt Intro 
 		Screen.intro(player.getName(), Path.generateAbsolutePath("txt Dateien/Intro.txt"),term,world);
 		term.getKey();
-		*/
+		Screen.showFile(Path.generateAbsolutePath("txt Dateien/Tutorial.txt"),term,world);
+		term.getKey();
 		Calendar cal = Calendar.getInstance();
 		long startTime = cal.getTimeInMillis();
 		
