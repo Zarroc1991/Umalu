@@ -1,0 +1,35 @@
+################################################################################
+#                                                                              #
+#     TTTTT U   U TTTTT OOOOO RRRRR IIIII AAAAA L                              #
+#       T   U   U   T   O   O R   R   I   A   A L                              #
+#       T   U   U   T   O   O RRRR    I   AAAAA L                              #
+#       T   U   U   T   O   O R R     I   A   A L                              #
+#       T   UUUUU   T   OOOOO R   R IIIII A   A LLLLL                          #
+#                                                                              #
+#                                                                              #
+#     Steuerung:                                                               #
+#                                                                              #
+#     <w> Nach Norden laufen     <q> Nach Nordwesten (↖) laufen                #
+#     <a> Nach Westen laufen     <e> Nach Nordosten  (↗) laufen                #
+#     <s> Nach Süden  laufen     <c> Nach Südosten   (↘) laufen                #
+#     <d> Nach Osten  laufen     <y> Nach Südwesten  (↙) laufen                #
+#                                                                              #
+#     weitere wichtige Tasten:                                                 #
+#                                                                              #
+#     <i> Zeigt Inventar an                                                    #
+#         <l> Zeigt Lunchbox an (nur aus Inventar)                             #
+#     <h> Zeigt Eventnachrichten an                                            #
+#     <o> Zeigt Hilfebildschirm an                                             #
+#     <b> Beendet das Spiel                                                    #
+#                                                                              #
+#     Praktische Tips                                                          #
+#                                                                              #
+#     - laufe gegen Monster um sie anzugreifen                                 #
+#     - rüste dich mit gefundenen Gegenständen aus                             #
+#     - vergiss nicht regelmäßig zu essen                                      #
+#     - achte auf die Waffenhaltbarkeit                                        #
+#     - lies die Eventnachrichten                                              #
+#                                                                              #
+#                                                                              #
+#                                                                              #
+################################################################################
