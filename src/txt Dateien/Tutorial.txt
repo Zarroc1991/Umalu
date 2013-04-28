@@ -9,10 +9,10 @@
 #                                                                              #
 #     Steuerung:                                                               #
 #                                                                              #
-#     <w> Nach Norden laufen     <q> Nach Nordwesten laufen                    #
-#     <a> Nach Westen laufen     <e> Nach Nordosten  laufen                    #
-#     <s> Nach Süden  laufen     <c> Nach Südosten   laufen                    #
-#     <d> Nach Osten  laufen     <y> Nach Südwesten  laufen                    #
+#     <w> Nach Norden laufen     <q> Nach Nordwesten (↖) laufen                #
+#     <a> Nach Westen laufen     <e> Nach Nordosten  (↗) laufen                #
+#     <s> Nach Süden  laufen     <c> Nach Südosten   (↘) laufen                #
+#     <d> Nach Osten  laufen     <y> Nach Südwesten  (↙) laufen                #
 #                                                                              #
 #     weitere wichtige Tasten:                                                 #
 #                                                                              #
