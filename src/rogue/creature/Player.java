@@ -45,6 +45,11 @@ public class Player extends Creature implements Camera {
 	private Boolean god1;
 	private Boolean god2;
 	private Boolean god3;
+	//highscore
+	private int hsMonster=0;
+	private int hsDamageOut=0;
+	private int hsDamageIn=0;
+	
 
 	/**
 	 * Creates a new Player Object
@@ -89,18 +94,6 @@ public class Player extends Creature implements Camera {
 	 * 
 	 * @return Name of Character
 	 */
-	public String getName() {
-		return name;
-	}
-    public Inventory getInventory(){
-            return inventory;
-        }
-    
-    public int getFull(){
-        return full;
-    }
-    
-
     
 	@Override
 	/**
@@ -272,13 +265,14 @@ public class Player extends Creature implements Camera {
         
         // Print result
         Screen.redrawEventLine(makeRightString("Du verursachst " + damage + " Schaden. "+opponent.name()+" hat noch "+opponent.hitpoints+" HP.",79));
-       
+       hsDamageOut=hsDamageOut+damage;//highscore anpassen
         
         try {
             term.getKey();
             if (opponentDied) {
                 //wait for key to continue on Status message
                 opponent.dropItem(opponent,tiledTerm);
+                hsMonster++;//highscore anpassen
             	//randomlyDropItem(opponent);
             }       
         } catch (InterruptedException e) {
@@ -318,26 +312,6 @@ public class Player extends Creature implements Camera {
     	checkHitpoints();
     }
     
-    public void reduceFull(){
-    	if(full>0){
-    		full--;
-    	}
-    }
-    public void increaseFull(int foodValue){
-    	full=full+foodValue;
-    	if(full>100){
-    		full=100;
-    	}
-    }
-
-    public double getHitpoints() {
-        return hitpoints;
-    }
-
-    public double getMaxHitpoints() {
-        return maxHitpoints;
-    }
-
     /**
      * Creates and prints an Inventory Screen
      */
@@ -524,6 +498,62 @@ public class Player extends Creature implements Camera {
 	}//while
     showInventoryScreen();
 }//showLunchbox
+	
+	public String getName() {
+		return name;
+	}
+	
+    public Inventory getInventory(){
+            return inventory;
+        }
+    
+    public int getFull(){
+        return full;
+    }
+    
+    public void reduceFull(){
+    	if(full>0){
+    		full--;
+    	}
+    }
+    public void increaseFull(int foodValue){
+    	full=full+foodValue;
+    	if(full>100){
+    		full=100;
+    	}
+    }
+
+    public double getHitpoints() {
+        return hitpoints;
+    }
+
+    public double getMaxHitpoints() {
+        return maxHitpoints;
+    }
+    
+    public void increaseHsMonster(int n){
+    	hsMonster=hsMonster+n;
+    }
+    
+    public void increaseHsDamageOut(int n){
+    	hsDamageOut=hsDamageOut+n;
+    }
+    
+    public void increaseHsDamageIn(int n){
+    	hsDamageIn=hsDamageIn+n;
+    }
+    
+    public int getHsMonster(){
+    	return hsMonster;
+    }
+    
+    public int getHsDamageOut(){
+    	return hsDamageOut;
+    }
+    
+    public int getHsDamageIn(){
+    	return hsDamageIn;
+    }
 	
 	private String eatFood(ArrayList<Item> lunchbox,int i){
 		String name=lunchbox.get(i).getName();

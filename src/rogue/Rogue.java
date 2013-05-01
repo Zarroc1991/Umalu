@@ -7,8 +7,10 @@ import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Calendar;
 import rogue.creature.Player;
+import rogue.creature.util.Item;
 import rogue.level.Level;
 import rogue.level.Screen;
+import rogue.system.HelpScreen;
 import rogue.system.Path;
 import rogue.system.CharacterCreation;
 import rogue.system.SystemHelper;
@@ -108,8 +110,10 @@ public class Rogue {
 		// Screen.showFile(normalizePath("src\\rogue\\system\\end.txt","rogue/system/end.txt"),
 		// term, world);
 		Screen.showFile(Path.generatePath("maps/end.txt"), term, world);
-
 		term.getKey();
+		
+		showHighscoreScreen(term,player);
+		
 		System.exit(0);
 
 	}
@@ -121,6 +125,34 @@ public class Rogue {
 		System.exit(0);
 		
 	}
+	
+	public static void showHighscoreScreen(TiledTermPanel term,Player player) {
+        boolean loop = true;
+        
+        while (loop) { 
+            // Erstelle eine ArrayList von Strings um dort unser Interface zu puffern
+            ArrayList<String> lines = new ArrayList<String>();
+            // Erstelle eine Titelzeile
+            lines.add("Statistik");
+            lines.add(" ");
+            lines.add("Getötete Monster: "+player.getHsMonster());
+            lines.add("Ausgeteilter Schaden:  "+player.getHsDamageOut());
+            lines.add("Eingesteckter Schaden: "+player.getHsDamageIn());
+            lines.add(" ");
+            lines.add(" ");
+            lines.add("Drücke eine beliebige Taste um das Spiel zu beenden.");
+            Screen.putText(lines);
+            try {
+                term.getKey();
+                loop=false;
+            } catch (InterruptedException e) {
+                System.out.println("!Exeception");
+                e.printStackTrace();
+            }catch (IndexOutOfBoundsException e){
+            	System.out.println("IndexOutOfBounds");
+            }//catch 
+        }//while(loop)
+    }//showHSScreen
 	
 	public static String getHPLine (Player player){
 		String a="HP: "+Math.round(player.getHitpoints()*10)/10.0+"/"+Math.round(player.getMaxHitpoints());

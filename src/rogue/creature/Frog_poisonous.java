@@ -84,6 +84,7 @@ public class Frog_poisonous extends Monster {
 	        int abzug =makeDamage(strength_constant, strength_random);
 		// Do Damage to Oppenent
 	        opponent.loseHitpoints(abzug);
+	        opponent.increaseHsDamageIn(abzug);
 	        String dam=" "+name+" macht "+abzug+" Schaden.";
 		// Print Result
 	           Random generator = new Random();
